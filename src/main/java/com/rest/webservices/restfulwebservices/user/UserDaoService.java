@@ -40,4 +40,12 @@ public class UserDaoService {
             }
             return null;
         }
+
+       //findOne(int id)
+       public User deleteUser(int id){
+            User user = findOne(id);
+            if(userList.removeIf(u -> u.getId() == id))
+                return user;
+        return null;
+    }
 }
